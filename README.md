@@ -8,23 +8,41 @@ Building systems that think, decide, and scale — without exposing the machiner
 
 ## What I'm building
 
+- **[Niyra](https://niyra.ai)** — *"She knows you."* A personal AI assistant that lives where you already are: WhatsApp, Telegram, Discord, web, and inbound voice calls — one conversation, every channel. Persistent long-term memory of your life, proactive follow-through (daily briefs, reminders, commitments it actually tracks), 40+ tools across email, docs, calendar, and the open web, with multi-provider LLM routing and failover underneath. Built solo, end to end: Go agent runtime on Fly.io, Next.js on Vercel, Postgres + pgvector.
 - **[Avuvo](https://avuvo.com)** — intent-driven execution platform. Plain language → shipped infrastructure. No YAML, no containers, no infra knowledge required.
 - **[HOM-i](https://avuvo.com)** — real-time voice + AI home-loan advisor. STT → LLM → TTS pipeline built for ultra-low latency.
 - **[Indya AI Labs](https://avuvo.com)** — AI orchestration and fintech automation initiatives.
 
-**OSS tools from the trenches:**
+**OSS tools from the trenches** — small, zero-dependency primitives, each extracted from a real production incident while building Niyra and other agent systems:
+
+*LLM operations*
 
 | Package | What it does |
 |---|---|
+| [llm-meter](https://github.com/varunmahajan1/llm-meter) | Token cost tracking with cache-token accounting + billing-drift detection — born from a metered bill that was an order of magnitude below the real invoice |
+| [llm-failover](https://github.com/varunmahajan1/llm-failover) | Go: provider-portable failover chains with circuit breakers — including the cross-provider `tool_call_id` fix that silently breaks tool-turn failover |
+
+*Agent safety*
+
+| Package | What it does |
+|---|---|
+| [agent-runtime](https://github.com/varunmahajan1/agent-runtime) | Go: Watchdog for stalled agents, role-based Tool Enforcer, risk-classified tools + human approval gates |
 | [promptshield](https://github.com/varunmahajan1/promptshield) | Prompt injection defense for LLM agents — zero deps, pattern-based |
-| [agent-stream](https://github.com/varunmahajan1/agent-stream) | Typed SSE events for multi-agent orchestration (handoffs, tool use, streaming) |
-| [agent-runtime](https://github.com/varunmahajan1/agent-runtime) | Go: Watchdog + Tool Enforcer for production multi-agent systems |
-| [llm-meter](https://github.com/varunmahajan1/llm-meter) | Token cost tracking and sliding-window rate limiting — Redis or in-memory |
+| [ssrfguard](https://github.com/varunmahajan1/ssrfguard) | Go: SSRF-safe fetching for user/webhook URLs — resolved-IP dial guard that defeats DNS rebinding |
+
+*Streaming & UX*
+
+| Package | What it does |
+|---|---|
+| [agent-stream](https://github.com/varunmahajan1/agent-stream) | Typed SSE events for multi-agent orchestration, with a terminal-event guarantee — no stream ever ends without telling the client |
+| [timeanchor](https://github.com/varunmahajan1/timeanchor) | Deterministic time grounding for LLM prompts — because your agent thinks today is Tuesday |
+| [channelfmt](https://github.com/varunmahajan1/channelfmt) | Markdown → WhatsApp/Telegram-native formatting, so users never see literal `**stars**` on their phones |
 
 ---
 
 ## Currently focused on
 
+- Personal AI — long-term agent memory, proactive (not just reactive) assistants, one agent across every chat channel
 - Multi-agent orchestration — agent-to-agent ecosystems, DAG scheduling, MoE routing
 - Voice-first AI pipelines — STT → LLM → TTS under 500ms
 - Platform engineering — execution layers that abstract infra from intent
