@@ -1,3 +1,5 @@
+<a href="https://github.com/varunmahajan1?achievement=pull-shark&tab=achievements"><img src="https://github.githubassets.com/assets/pull-shark-default-498c279a747d.png" alt="GitHub achievement: Pull Shark" width="64" height="64" align="right"></a>
+
 # Varun Mahajan
 
 Founder. I build production AI systems, then extract the primitives that actually broke.
@@ -6,7 +8,7 @@ Founder. I build production AI systems, then extract the primitives that actuall
 
 **Shipped:** [Niyra](https://niyra.ai) — personal AI across WhatsApp, Telegram, Discord, web, and inbound voice. Built under [Avuvo](https://avuvo.com).
 
-India · [vm@avuvo.com](mailto:vm@avuvo.com) · [linkedin.com/in/varunm1](https://www.linkedin.com/in/varunm1)
+India · [vm@avuvo.com](mailto:vm@avuvo.com) · [LinkedIn](https://www.linkedin.com/in/varunm1)
 
 ---
 
@@ -41,6 +43,10 @@ Small libraries pulled out of real incidents while shipping Niyra and other agen
 
 ## Upstream
 
-Contributions to other people's repositories, not just my own.
+Open contributions to Anthropic's official Go SDK. Status is **Open** — none of these are merged.
 
-_This section fills as PRs merge._
+| PR | Status | Change |
+|---|---|---|
+| [anthropic-sdk-go#430](https://github.com/anthropics/anthropic-sdk-go/pull/430) | Open | Bedrock SSO bearer sent as API key ([#414](https://github.com/anthropics/anthropic-sdk-go/issues/414)) |
+| [anthropic-sdk-go#431](https://github.com/anthropics/anthropic-sdk-go/pull/431) | Open | bash Close wait hang / `setsid` ([#390](https://github.com/anthropics/anthropic-sdk-go/issues/390)) |
+| [anthropic-sdk-go#432](https://github.com/anthropics/anthropic-sdk-go/pull/432) | Open | Unescaped path params in generated client URLs ([#422](https://github.com/anthropics/anthropic-sdk-go/issues/422)) |
