@@ -20,6 +20,18 @@ Gurugram · London · [vm@varunmahajan.in](mailto:vm@varunmahajan.in) · [Linked
 
 ---
 
+## spoor
+
+**[spoor](https://github.com/varunmahajan1/spoor)** — which AI crawlers reached your site, and which of your pages they never did.
+
+AI crawlers don't execute JavaScript, so GA4 never records them and Search Console doesn't report them. Server-side request data is the only source there is.
+
+Classifies by **intent, not vendor**: GPTBot (training), OAI-SearchBot (indexing) and ChatGPT-User (a live user waiting on an answer right now) are three different events. Every bot list I found collapses them into "OpenAI", which throws away the closest thing a log holds to a citation. Verifies claimed identities against operators' published IP ranges, because user agents are trivially spoofed. Then answers the question that needs no citation data: which of your published URLs has no answer engine ever fetched.
+
+Next.js middleware · S3/R2 sink, SigV4 without an AWS SDK · DuckDB reports · MCP server · zero-dependency core, enforced in CI.
+
+---
+
 ## Primitives from production
 
 Incident-derived libraries. Each one exists because something failed in production.
